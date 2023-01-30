@@ -69,7 +69,7 @@ export default function Home() {
       </Drawer>
 
       <header className="text-gray-700 body-font border-gray-200">
-        <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+        <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="https://tailblocks.cc" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="p-2 w-full">
               <div className="h-full flex items-center border-gray-200 border mr-36 ml-36 p-12 rounded-lg">
                 <div className="flex-grow">
-                  <h2 className="text-gray-900 title-font font-medium text-center">Holden Caulfield</h2>
+                  <h2 className="text-gray-900 title-font font-medium text-center mb-9">Holden Caulfield</h2>
 
                   <Stepper active={active} breakpoint="sm">
                     <Stepper.Step label="First step" description="Profile settings">
@@ -135,7 +135,7 @@ export default function Home() {
                         Back
                       </Button>
                     )}
-                    {active !== 3 && <Button onClick={nextStep}>Next step</Button>}
+                    {active !== 3 && <Button className='bg-green-500 hover:bg-green-600' onClick={nextStep}>Next step</Button>}
                   </Group>
 
                 </div>
