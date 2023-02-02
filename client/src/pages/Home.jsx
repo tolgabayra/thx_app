@@ -7,6 +7,12 @@ import Footer from './Footer';
 
 
 export default function Home() {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+
+
+
   const [opened, setOpened] = useState(false);
   const [active, setActive] = useState(0);
 

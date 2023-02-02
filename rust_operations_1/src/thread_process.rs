@@ -7,7 +7,6 @@ pub mod thread_process{
 
    pub fn main() {
 
-
         thread::spawn(||{
             for i in 0..100  {
                 println!("Loop1: {}", i);
