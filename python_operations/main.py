@@ -1,18 +1,19 @@
-from time import sleep
-from threading import Thread
 
 
-def task():
-    print("Starting a task...")
-    sleep(1)
-    print("done...")
 
+def speak(audio):
+    engine = pyttsx3.init()
+    # getter method(gets the current value
+    # of engine property)
+    voices = engine.getProperty('voices')
 
-t1 = Thread(target=task)
-t2 = Thread(target=task)
+    # setter method .[0]=male voice and
+    # [1]=female voice in set Property.
+    engine.setProperty('voice', voices[0].id)
 
-t1.start()
-t2.start()
+    # Method for the speaking of the assistant
+    engine.say(audio)
 
-t1.join()
-t2.join()
+    # Blocks while processing all the currently
+    # queued commands
+    engine.runAndWait()
