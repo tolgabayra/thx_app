@@ -8,3 +8,14 @@ class UserIn(BaseModel):
 
 class UserOut(UserIn):
     id: int
+
+
+class UserCreate(BaseModel):
+    name: str
+    email: str
+
+
+class UserUpdate(BaseModel):
+    name: str
+    email: str
+

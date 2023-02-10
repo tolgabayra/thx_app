@@ -9,7 +9,7 @@ app = FastAPI()
 DB_URI = "postgresql://root:root@localhost/postgres"
 engine = create_engine(DB_URI, poolclass=pool.SingletonThreadPool)
 
-app.include_router(user_controller.app, prefix="/api")
+app.include_router(user_controller.app, prefix="/api/v1/users")
 
 
 @app.on_event("startup")
