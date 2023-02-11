@@ -2,8 +2,6 @@ import sys
 from typing import List
 from ..models import User
 from sqlalchemy.orm import Session
-from main import engine
-sys.path.append("../../main.py")
 
 
 def create_user(db: Session, user: User):

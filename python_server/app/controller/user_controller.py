@@ -1,20 +1,26 @@
 from fastapi import APIRouter, Request
 from sqlalchemy.orm import Session
 from ..service import user_service
-
+from ..dto import user_dto
 app = APIRouter()
 
 
 @app.post("/")
-def create(request: Request):
-    user_service.create_user(db=Session, user=request.body())
-    return {"message": "Hello World"}
+def create(user: user_dto.UserCreate):
+    # user_service.create_user(db=Session, user=request.body())
+    return user.name
 
 
 @app.delete("/{id}")
 def delete(request: Request):
     user_service.delete_user(db=Session, user_id=id)
     return {"Message": "User has been deleted."}
+
+
+@app.put("/{id}")
+def update(request: Request):
+    updated_user = request.body()
+    return user_service.update_user(db=Session, user_id=id, user_update=updated_user)
 
 
 @app.get("/")
